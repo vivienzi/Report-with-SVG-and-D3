@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-hierarchy.v1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+    <title>Real 3D chart</title>
+  </head>
+  <body>
+    <div class= "row container">
+      <div class="col-md-7 radarChart content" ><b>LTE Performance Healthiness Section</b></div>
+      <div class="col-md-5 content" id ="textreport"></div>
+    </div>
+    <div class="row container">
+      <div class="col-md-7 radialTree"><b>Top10 Low Performing KPIs Section</b></div>
+      <div class ="col-md-5 table table-hover table1"></div>
+    </div>
+    <div class="row container">
+      <div class="col-md-7 barChart"><b>Root Cause Analysis Section</b></div>
+      <div class ="col-md-5 table table-hover table2"></div>
+    </div>
+  </body>
+  <script src="radar.js"></script>
+  <script src="barchart.js"></script>
+  <script src="radialtree.js"></script>
+
+</html>
