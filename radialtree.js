@@ -54,7 +54,7 @@ var tree = d3.tree()
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-d3.csv("/public/data.csv", function(error, data) {
+d3.csv("public/data.csv", function(error, data) {
   if (error) throw error;
 
   var root = tree(stratify(data));
@@ -96,6 +96,7 @@ function project(x, y) {
 radialtree();
 
 function tabulate(data, columns) {
+    var Format = d3.format('%')
     var table = d3.select('.table1').append('table')
     var thead = table.append('thead')
     var tbody = table.append('tbody');
@@ -113,7 +114,7 @@ function tabulate(data, columns) {
     var rows = tbody.selectAll('tr')
         .data(data)
         .enter()
-        .append('tr');
+        .append('tr')
 
     // create a cell in each row for each column
     var cells = rows.selectAll('td')
@@ -127,9 +128,33 @@ function tabulate(data, columns) {
         })
         .enter()
         .append('td')
-        .text(function(d) {
+        .attr('class', function(d,i){ return "col_" + i; })
+        .text(function(d){
             return d.value;
         });
+
+    var colorcells = d3.selectAll(".col_4, .col_5, .col_6")
+          .text(function(d){
+            if(d.value>0){return("+" + d.value + "%" );}
+            else if(d.value<0){return(d.value + "%")}
+          })
+          .style("color", function(d){
+            if(d.value>0){return "red"}
+            else{return "green"}})
+          .append('span')
+          .attr('class',function(d){
+            if(d.value>0){return 'glyphicon glyphicon-circle-arrow-up'}
+            else{return 'glyphicon glyphicon-circle-arrow-down'}
+           })
+          .style("color", function(d){
+            if(d.value>0){return "red"}
+            else{return "green"}
+          });
+
+
+
+        // rows.selectAll("#Deviation from Previous 14 Days Avg")
+        // .selectAll('td').style("color","blue");
 
     return table;
 }

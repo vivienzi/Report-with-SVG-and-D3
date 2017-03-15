@@ -178,9 +178,20 @@ function tabulate(data, columns) {
         })
         .enter()
         .append('td')
+        .attr('class', function(d,i){ return "col_" + i; })
         .text(function(d) {
             return d.value;
         });
+
+    var colorcells = d3.selectAll(".col_4, .col_5, .col_6")
+        .text(function(d){
+          if(d.value>0){return("+" + d.value + "%")}
+        })
+        .style("color", function(d) {
+            if (d.value > 0) {return "red"}
+            else {return "green"}
+        });
+
 
     return table;
 }
