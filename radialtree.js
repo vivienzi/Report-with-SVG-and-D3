@@ -50,7 +50,7 @@ var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
 var tree = d3.tree()
-    .size([360, 60])
+    .size([360, 100])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 

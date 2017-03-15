@@ -1,11 +1,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-hierarchy.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -13,19 +16,36 @@
     <title>Real 3D chart</title>
   </head>
   <body>
-    <div class= "row container">
-      <div class="col-md-7 radarChart content" ><b>LTE Performance Healthiness Section</b></div>
-      <div class="col-md-5 content" id ="textreport"></div>
+    <div class="container-fluid">
+      <h2>eNB/or Cell Name Performance Healthiness Diagnostics Report<span class="pickdate"></span></h2>
+      <div class="row">
+        <div class='col-sm-2'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class= "row content">
+        <div class="col-md-7 radarChart"><b>LTE Performance Healthiness Section</b></div>
+        <div class="col-md-5" id ="textreport"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 radialTree"><b>Top10 Low Performing KPIs Section</b></div>
+        <div class ="col-xs-6 table table-hover table1" id="table1"></div>
+      </div>
+      <div class="row">
+        <div class ="col-xs-5 table table-hover table2" id="table2"></div>
+        <div class="col-xs-7 barChart"><b>Root Cause Analysis Section</b></div>
+      </div>
     </div>
-    <div class="row container">
-      <div class="col-md-7 radialTree"><b>Top10 Low Performing KPIs Section</b></div>
-      <div class ="col-md-5 table table-hover table1"></div>
-    </div>
-    <div class="row container">
-      <div class="col-md-7 barChart"><b>Root Cause Analysis Section</b></div>
-      <div class ="col-md-5 table table-hover table2"></div>
-    </div>
+
   </body>
+  <script src="script.js"></script>
   <script src="radar.js"></script>
   <script src="barchart.js"></script>
   <script src="radialtree.js"></script>

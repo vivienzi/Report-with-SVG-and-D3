@@ -1,6 +1,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 300;
     fill: #242424;
     text-align: center;
@@ -11,17 +11,36 @@ body {
     position: relative;
 }
 #textreport{
-  padding-left:100px;
+  padding-left:50px;
+  padding-top: 150px;
   text-align:left;
-}
-.container{
-  position: relative;
-}
-.content{
-  position:absolute;
-  bottom: 0px;
+  float: none;
+  display: table-cell;
+  vertical-align: bottom;
+  font-size:1.25em
 }
 
+.content{
+  margin-bottom:20px;
+}
+
+#table1, #table2{
+  padding-top: 3em;
+  width: 41.6667%;
+  max-width: 41.6667%;
+  font-size: 1em;
+}
+.table td, .table th {
+  padding: 0rem;
+  text-align: -internal-center;
+  border: 1px solid #999;
+}
+.table thead th{
+  vertical-align: top;
+}
+{
+
+}
 .legend {
     font-family: 'Raleway', sans-serif;
     fill: #333333;
@@ -32,7 +51,6 @@ body {
 }
 
 .radarChart {
-    z-index: 2;
     left: 10px;
     top: 10px;
 }

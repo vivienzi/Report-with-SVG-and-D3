@@ -18,8 +18,10 @@ var data = [
     ];
 function radar(){
     var margin = {top: 100, right: 100, bottom: 100, left: 100};
-    var width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right;
-    var height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+    // var width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right;
+    // var height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+    var width = 500;
+    var height =500;
 
 
 //draw chart
